@@ -2,6 +2,7 @@ import "./App.css";
 import { useQuery } from "@apollo/client";
 import { SEARCH_REPOSITORY } from "../../query/repos";
 import { useEffect, useState } from "react";
+import RepositoriesList from "../RepositoriesList/RepositoriesList";
 
 function App() {
   const [searchValue, setSearchValue] = useState(" ");
@@ -22,6 +23,7 @@ function App() {
         value={searchValue}
       />
       <button onClick={() => console.log(searchValue)}>123</button>
+      <RepositoriesList data={data?.search.edges} />
     </div>
   );
 }

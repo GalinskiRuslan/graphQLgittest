@@ -7,7 +7,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 const client = new ApolloClient({
   uri: "https://api.github.com/graphql",
   headers: {
-    Authorization: `Bearer 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`,
+    Authorization: `Bearer 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`,
   },
   cache: new InMemoryCache(),
 });
