@@ -1,12 +1,13 @@
 import { gql } from "@apollo/client";
 
 export const SEARCH_REPOSITORY = gql`
-  query searchRep($query: String!) {
-    search(query: $query, type: REPOSITORY, first: 10) {
+  query searchRep($query: String!, $after: String) {
+    search(query: $query, type: REPOSITORY, first: 10, after: $after) {
       pageInfo {
         startCursor
-        hasNextPage
         endCursor
+        hasNextPage
+        hasPreviousPage
       }
       repositoryCount
       edges {
